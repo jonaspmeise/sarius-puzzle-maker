@@ -35,12 +35,29 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("./assets/background.png");
+    filter: blur(8px);
+    z-index: -1;
+}
+
+.background-autumn {
+    background-image: url("./assets/autumn.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    filter: blur(8px);
-    z-index: -1;
+}
+
+.background-midnight {
+    background-image: url("./assets/midnight.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.background-winter {
+    background-image: url("./assets/winter.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .cursive {
@@ -52,9 +69,24 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-.dreamy-form {
+.dreamy-form-winter {
+    background-color: snow;
+    border: 2px solid lightblue;
+}
+
+.dreamy-form input {
+    font-size: 25px;
+}
+
+.dreamy-form-autumn {
     background-color: whitesmoke;
-    border: 2px solid #6A1B9A;;
+    border: 2px solid #6A1B9A;
+}
+
+.dreamy-form-midnight {
+    background-color: lightskyblue;
+    border: 2px solid whitesmoke;
+    color: darkblue;
 }
 
 .dreamy-form .btn-primary {
@@ -72,13 +104,6 @@ body {
 .dreamy-form .btn-secondary:hover {
     background-color: #243bbd;
     border-color: #9C27B0;
-}
-.dreamy-form .form-control {
-    border-color: #b55aff;
-}
-.dreamy-form .form-control:focus {
-    border-color: #fa24c4;
-    box-shadow: 0 0 0 0.2rem rgba(142, 36, 170, 0.25);
 }
 
 /* Apply custom scrollbar styles */
@@ -117,9 +142,65 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.challenge {
-    border:2px solid transparent;
+.moonlight {
+    position:fixed;
+    top: 0;
+    left: 0;
+    border-bottom: 7000px solid rgb(236, 231, 231);
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    fill: red;
+    height: 0px;
+    width: 400px;    
+    animation: rotateBackAndForth 20s infinite, blink 5s infinite;
+    transition: opacity 2s easy-in-out;
+    transform-origin: 50vh 50vh;
+    filter: blur(30px);
+    z-index: -1;
 }
-.challenge:hover {
-    border:2px solid orange;
+
+.moonlight:nth-child(1) { top: 100vh; animation: rotateBackAndForth 13s infinite, blink 4s infinite; }
+.moonlight:nth-child(2) { left: 100vh; animation: rotateBackAndForth 25s infinite, blink 7s infinite; }
+.moonlight:nth-child(3) { top: 100vh; left: 100vh; animation: rotateBackAndForth 16s infinite, blink 6s infinite;  }
+
+
+@keyframes blink {
+    0% { opacity: 0.09 }
+    50% { opacity: 0.13 }
+    90% { opacity: 0.03 }
+    100% { opacity: 0.08 }
 }
+
+@keyframes rotateBackAndForth {
+    0% { transform: rotate(0deg);}
+    25% { transform: rotate(90deg);}
+    50% { transform: rotate(180deg);}
+    75% { transform: rotate(270deg);}
+    100% { transform: rotate(360deg);}
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 105%;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
