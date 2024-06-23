@@ -21,6 +21,11 @@
 <body>
     <div class="background background-autumn" id="background"></div>
 
+    <div class="pyro" visibility="hidden">
+        <div class="before"></div>
+        <div class="after"></div>
+      </div>
+
     <div class="moonlight"></div>
     <div class="moonlight"></div>
     <div class="moonlight"></div>
@@ -29,7 +34,7 @@
     <div id="main" class="container d-flex justify-content-center align-items-center vh-100">
       <div class="dreamy-form dreamy-form-autumn border shadow-lg p-4 rounded" id="mainDiv">
           <h2 class="cursive mb-4 text-center">Register</h2>
-          <form id="registerForm">
+          <form id="registerForm" onsubmit="call(event)">
               <div class="form-group mb-2">
                   <label for="username">Username</label>
                   <input type="text" class="mt-0.5 form-control" id="username" placeholder="Enter username" required>
@@ -39,7 +44,7 @@
                   <input type="text" class="mt-0.5 form-control" id="inputBox" placeholder="Enter password" required>
               </div>
 
-              <button id="register" type="submit" class="btn mt-2 btn-primary btn-block" disabled>Register</button>
+              <button id="register" type="submit" class="btn mt-2 btn-primary btn-block" onclick="call(event)" disabled>Register</button>
           </form>
 
           <div class ="challenges container mt-5 border shadow" id="challenges"></div>
